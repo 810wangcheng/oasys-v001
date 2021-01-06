@@ -23,4 +23,11 @@ public interface SysMenuDao extends JpaRepository<SystemMenu,Long> {
      * @return
      */
     List<SystemMenu> findByParentIdNotOrderBySortId(long l);
+
+    /**
+     * 根据名称进行查询
+     * @param name
+     * @return
+     */
+    SystemMenu findByMenuName(String name);
 }

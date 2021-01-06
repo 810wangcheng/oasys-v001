@@ -29,4 +29,12 @@ public interface TypeListDao extends JpaRepository<SystemTypeList,Long> {
      * @return
      */
     List<SystemTypeList> findByTypeNameLikeOrTypeModelLike(String name,String model);
+
+    /**
+     * 根据类型模型和名称查询唯一类型
+     * @param aoa_plan_list
+     * @param type
+     * @return
+     */
+    SystemTypeList findByTypeModelAndTypeName(String aoa_plan_list, String type);
 }

@@ -118,12 +118,12 @@ public class SysTypeController {
         if (!StringUtils.isEmpty(request.getParameter("name"))){
             String nameOrModel = "%"+request.getParameter("name")+"%";
             typeLists = typeService.findTypeListByNameOrModel(nameOrModel);
-            request.setAttribute("typelist",typeLists);
+            request.setAttribute("typeList",typeLists);
         }
         //没有输入信息，查询全部
         else {
             typeLists = typeService.findAllType();
-            request.setAttribute("typelist",typeLists);
+            request.setAttribute("typeList",typeLists);
         }
         return "systemcontrol/typetable";
     }

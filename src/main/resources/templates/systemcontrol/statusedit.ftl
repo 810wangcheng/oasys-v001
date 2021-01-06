@@ -80,7 +80,7 @@ a:hover {
 <script type="text/javascript">
 
 $('.successToUrl').on('click',function(){
-	window.location.href='/testsysstatus';
+	window.location.href='/sysstatus';
 });
 //表单提交前执行的onsubmit()方法；返回false时，执行相应的提示信息；返回true就提交表单到后台校验与执行
 function check() {

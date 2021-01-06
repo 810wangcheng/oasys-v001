@@ -132,6 +132,19 @@ public class SysMenuController {
         return "forward:/menuedit";
     }
 
+    @RequestMapping("menutable")
+    public String doFindMenuByName(HttpServletRequest request){
+        if (!StringUtils.isEmpty(request.getParameter("name"))){
+            String name = request.getParameter("name");
+            log.info("菜单页面查询输入的名称为："+name);
+            SystemMenu menu = menuService.findSysMenuByName(name);
+            request.setAttribute("oneMenuAll",menu);
+        }else{
+            menuService.findSysMenu(request);
+        }
+        return "systemcontrol/menutable";
+    }
+
     @RequestMapping("deletethis")
     public String deleteSysMenu(HttpServletRequest request){
         long menuId = Long.parseLong(request.getParameter("id"));

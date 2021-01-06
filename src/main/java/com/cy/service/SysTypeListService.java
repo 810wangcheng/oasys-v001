@@ -47,4 +47,8 @@ public class SysTypeListService {
     public List<SystemTypeList> findTypeListByNameOrModel(String nameOrModel) {
         return typeListDao.findByTypeNameLikeOrTypeModelLike(nameOrModel,nameOrModel);
     }
+
+    public SystemTypeList findByTypeModelAndTypeName(String aoa_plan_list, String type) {
+        return typeListDao.findByTypeModelAndTypeName(aoa_plan_list,type);
+    }
 }

@@ -23,4 +23,24 @@ public class StatusService {
     public List<SystemStatusList> findStatusByStatusModel(String statusModel) {
         return statusDao.findByStatusModel(statusModel);
     }
+
+    public List<SystemStatusList> findAllSysStatus() {
+        return statusDao.findAll();
+    }
+
+    public void deleteSysStatusById(Long statusId) {
+        statusDao.delete(statusId);
+    }
+
+    public SystemStatusList saveSysStatus(SystemStatusList statusList) {
+        return statusDao.save(statusList);
+    }
+
+    public List<SystemStatusList> findByStatusNameLikeOrStatusModelLike(String name, String name1) {
+        return statusDao.findByStatusNameLikeOrStatusModelLike(name,name1);
+    }
+
+    public SystemStatusList findByStatusModelAndStatusName(String aoa_plan_list, String type) {
+        return statusDao.findByStatusModelAndStatusName(aoa_plan_list,type);
+    }
 }

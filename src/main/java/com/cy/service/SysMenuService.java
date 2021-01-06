@@ -64,4 +64,8 @@ public class SysMenuService {
     public void deleteSysMenuById(long menuId) {
         sysMenuDao.delete(menuId);
     }
+
+    public SystemMenu findSysMenuByName(String name) {
+        return sysMenuDao.findByMenuName(name);
+    }
 }
